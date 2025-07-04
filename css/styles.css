@@ -1,24 +1,39 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
+    padding: 20px;          
+    background-color: #e7e4c2;
 }
 
-header {
+h1 {
+    font-family: 'Limelight', cursive;
+    font-size: 82px;
+    color: #007acc;
+    text-align: center;
+}
+
+nav {
+    font-size: 16px;
+    padding: 10px;
     text-align: center;
     margin-bottom: 30px;
 }
 
 nav a {
-    margin: 0 10px;
+    margin-right: 110px;
     text-decoration: none;
-    color: #333;
+    color: #e67e22 ;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid #e67e22;
 }
 
 nav a:hover {
     color: #007acc;
+    border: 2px solid #007acc;
 }
 
 section {
@@ -26,29 +41,13 @@ section {
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-form button {
-    background-color: #007acc;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-form button:hover {
-    background-color: #005f99;
-}
-
-#respuesta {
-    margin-top: 15px;
-    color: green;
-    font-weight: bold;
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

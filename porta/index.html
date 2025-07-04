@@ -5,20 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <h1>Hola, soy Yocxany</h1>
         <nav>
-            <a href="#sobre-mi">Sobre mí</a> |
-            <a href="#proyectos">Proyectos</a> |
-            <a href="#contacto">Contacto</a>
+            <a style="padding: 15px;" href="#sobre-mi"><b>Sobre mí</b></a> 
+            <a style="padding: 15px;" href="#proyectos"><b>Proyectos</b></a> 
+            <a style="padding: 15px;" href="#contacto"><b>Contacto</b></a>
         </nav>
+        <h1>Yocxany Chaves</h1>
     </header>
+
+    <!-- Información de contacto -->
+    <div class="card" style="width: 18rem;">
+    <img src="/img/DVEH7640.JPG" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    </div>
+<!-- Información de contacto -->
 
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
-        <p>Soy estudiante y desarrolladora web en Costa Rica. Me apasiona crear proyectos interesantes.</p>
+        <p>Soy estudiante y desarrolladora web en Costa Rica.</p>
+        <p>Me apasiona aprender nuevas tecnologías y mejorar mis habilidades.</p>
     </section>
 
     <section id="proyectos">
@@ -28,30 +42,5 @@
             <li>Proyecto 2 - App con JavaScript</li>
         </ul>
     </section>
-
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form id="contactForm">
-            <label for="nombre">Nombre:</label><br />
-            <input type="text" id="nombre" name="nombre" required /><br />
-            <label for="email">Email:</label><br />
-            <input type="email" id="email" name="email" required /><br />
-            <label for="mensaje">Mensaje:</label><br />
-            <textarea id="mensaje" name="mensaje" required></textarea><br />
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="respuesta"></div>
-    </section>
-
-    <script>
-        const form = document.getElementById('contactForm');
-        const respuesta = document.getElementById('respuesta');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            respuesta.textContent = 'Gracias por contactarme, ' + form.nombre.value + '!';
-            form.reset();
-        });
-    </script>
 </body>
 </html>
