@@ -1,9 +1,20 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;          
-    background-color: #e7e4c2;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;          
+}
+
+canvas{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
 }
 
 h1 {
@@ -37,6 +48,8 @@ nav a:hover {
 }
 
 section {
+    margin-left: 250px;
+    margin-right: 250px;
     background: white;
     padding: 15px;
     margin-bottom: 20px;
@@ -44,10 +57,24 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.contenedor-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+}
+
 .card {
-    background: white;
+    background: #000000;
+    color: #ffffff;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }

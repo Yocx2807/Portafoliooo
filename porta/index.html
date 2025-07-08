@@ -6,26 +6,142 @@
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="/css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
-    <header>
+
+    <canvas id="manchas"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('manchas');
+        const ctx = canvas .getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function r(min, max) 
+        {
+            return Math.random() * (max - min) + min;
+        }
+
+        //Funcion para generar manchas
+        function generarFormaMancha(scale)
+        {
+            const path = new Path2D();
+            path.moveTo(0,0);
+                path.bezierCurveTo(20*scale, -50*scale, 50*scale, 10*scale, 40*scale, 60*scale);
+                path.bezierCurveTo(40*scale, 70*scale, 0, 90*scale, -10*scale, 50*scale);
+                path.bezierCurveTo(-20*scale, 20*scale, -10*scale, 0, 0, 0);
+
+                return path;
+        }
+
+        //Funcion para dibujar manchas con propiedades unicas
+        let manchas = [];
+
+        for(let i = 0; i < 25; i++)
+        {
+            const baseScale = r(0.8, 2);
+            const radio = baseScale * 30;
+
+            manchas.push
+             ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                baseScale: baseScale,
+                scaleOffset: Math.random() * Math.PI * 2,
+                velX: (Math.random() - 0.5) * 0.2, 
+                velY: (Math.random() - 0.5) * 0.2,
+                angle: Math.random() * Math.PI * 2,
+                velAngle: (Math.random() - 0.5) * 0.02,
+                forma: generarFormaMancha(1),
+                radio
+            });
+        }
+
+
+        // Dibuja una mancha individual
+        function dibujarManchas(m, escalaAnimada)
+        {
+            ctx.save();
+            ctx.translate(m.x, m.y);
+            ctx.rotate(m.angle);
+            ctx.scale(escalaAnimada, escalaAnimada);
+            ctx.fillStyle = 'black';
+            ctx.fill(m.forma);
+            ctx.restore();
+        }
+
+        let tiempo = 0;
+
+        function animar()
+        {
+            tiempo += 0.03;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for(let i = 0; i < manchas.length; i++)
+            {
+                let m = manchas[i];
+
+                //movimiento en linea recta
+                m.x += m.velX;
+                m.y += m.velY;
+
+                //actualizar angulo con velocidad angular
+                m.angle += m.velAngle;
+
+                //rebotes con los bordes
+                if(m.x < m.radio || m.x > canvas.width - m.radio) m.velX *= -1;
+                if(m.y < m.radio || m.y > canvas.height - m.radio) m.velY *= -1;
+            
+                //latido en escala
+                const escala = m.baseScale + Math.sin(tiempo + m.scaleOffset) * 0.2;
+            
+                //dibujar manchas
+                dibujarManchas(m, escala);
+            }
+
+            requestAnimationFrame(animar);
+
+        }
+
+        animar();
+
+        window.addEventListener('resize', () =>
+        {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+
+    <headera>
         <nav>
             <a style="padding: 15px;" href="#sobre-mi"><b>Sobre mí</b></a> 
             <a style="padding: 15px;" href="#proyectos"><b>Proyectos</b></a> 
             <a style="padding: 15px;" href="#contacto"><b>Contacto</b></a>
         </nav>
         <h1>Yocxany Chaves</h1>
-    </header>
+    </headera>
 
-    <!-- Información de contacto -->
-    <div class="card" style="width: 18rem;">
-    <img src="/img/DVEH7640.JPG" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+    <!-- Card -->
+    <div class="contenedor-card">
+        <div class="card" style="width: 18rem;">
+        <img src="/img/DVEH7640.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+        <img src="/img/DVEH7640.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
     </div>
 <!-- Información de contacto -->
 
@@ -42,5 +158,6 @@
             <li>Proyecto 2 - App con JavaScript</li>
         </ul>
     </section>
+    
 </body>
 </html>
