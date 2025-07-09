@@ -24,16 +24,40 @@
         }
 
         //Funcion para generar manchas
-        function generarFormaMancha(scale)
+        function generarFormaMancha(scale = 1) 
         {
             const path = new Path2D();
-            path.moveTo(0,0);
-                path.bezierCurveTo(20*scale, -50*scale, 50*scale, 10*scale, 40*scale, 60*scale);
-                path.bezierCurveTo(40*scale, 70*scale, 0, 90*scale, -10*scale, 50*scale);
-                path.bezierCurveTo(-20*scale, 20*scale, -10*scale, 0, 0, 0);
 
-                return path;
+            const puntos = 160; // Más puntos = más suavidad
+            const angPaso = (Math.PI * 2) / puntos;
+
+            const deformacion = 0.35; // 0 = círculo perfecto, 0.2 = mancha orgánica
+            const radioBase = 40 * scale;
+
+            const frecuencia = r(3, 4);          // cuántas "ondas" alrededor
+            const fase = r(0, Math.PI * 2);      // fase constante en toda la mancha
+
+            for (let i = 0; i <= puntos; i++) {
+                const ang = i * angPaso;
+                const variacion = 1 + Math.sin(ang * frecuencia + fase) * deformacion;
+                const r = radioBase * variacion;
+
+                const x = Math.cos(ang) * r;
+                const y = Math.sin(ang) * r;
+
+                if (i === 0) {
+                    path.moveTo(x, y);
+                } else {
+                    path.lineTo(x, y);
+                }
+            }
+
+            path.closePath();
+            return path;
         }
+
+
+
 
         //Funcion para dibujar manchas con propiedades unicas
         let manchas = [];
@@ -41,10 +65,10 @@
         for(let i = 0; i < 25; i++)
         {
             const baseScale = r(0.8, 2);
-            const radio = baseScale * 30;
+            const radio = baseScale * 15;
 
             manchas.push
-             ({
+            ({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 baseScale: baseScale,
@@ -66,7 +90,7 @@
             ctx.translate(m.x, m.y);
             ctx.rotate(m.angle);
             ctx.scale(escalaAnimada, escalaAnimada);
-            ctx.fillStyle = 'black';
+            ctx.fillStyle = 'rgba(93, 64, 55, 1)';
             ctx.fill(m.forma);
             ctx.restore();
         }
@@ -143,7 +167,7 @@
         </div>
         </div>
     </div>
-<!-- Información de contacto -->
+    <!-- fin cards -->
 
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
@@ -157,7 +181,7 @@
             <li>Proyecto 1 - Página web de ejemplo</li>
             <li>Proyecto 2 - App con JavaScript</li>
         </ul>
-    </section>
+    </section>    
     
 </body>
 </html>
