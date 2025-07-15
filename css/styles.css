@@ -1,7 +1,7 @@
 html{
     margin: 0;
     padding: 0;
-    background-color: #fdebd0;
+    background-color: #000000;
 }
 
 body {
@@ -18,11 +18,16 @@ canvas{
 }
 
 h1 {
-    font-family: 'Limelight', cursive;
-    font-size: 82px;
-    color: #007acc;
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 72px;
+    color: white;
+    text-shadow:
+    1px 1px #999,
+    2px 2px #888,
+    3px 3px #777,
+    4px 4px #666;
 }
+
 
 nav {
     font-size: 16px;
@@ -50,31 +55,9 @@ nav a:hover {
 section {
     margin-left: 250px;
     margin-right: 250px;
-    background: white;
+    color: rgb(107, 191, 224);
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contenedor-card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 70px;
-}
-
-.card {
-    background: #000000;
-    color: #ffffff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
 }
