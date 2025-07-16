@@ -27,36 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'JavaScript',
             description: 'Amplia experiencia en desarrollo frontend interactivo con JavaScript, manipulación del DOM, y frameworks/librerías (como Three.js en este portafolio).'
         },
-        // Añade aquí más objetos para cada data-lang que tengas
-        // 'python': {
-        //     title: 'Python',
-        //     description: 'Dominio en scripting, automatización, análisis de datos y desarrollo web con Python.'
-        // },
     };
 
-    // --- Manejo del clic para mostrar la burbuja ---
     skillItems.forEach(item => {
         item.addEventListener('click', () => {
-            const lang = item.dataset.lang; // Obtiene el valor del atributo data-lang
+            const lang = item.dataset.lang;
             const data = skillData[lang];
 
             if (data) {
                 bubbleTitle.textContent = data.title;
                 bubbleDescription.textContent = data.description;
-                infoBubble.classList.add('show'); // Muestra la burbuja
+                infoBubble.classList.add('show'); 
             }
         });
     });
 
-    // --- Manejo del clic para cerrar la burbuja ---
     bubbleCloseBtn.addEventListener('click', () => {
-        infoBubble.classList.remove('show'); // Oculta la burbuja
+        infoBubble.classList.remove('show'); 
     });
 
-    // --- Cierra la burbuja al hacer clic fuera de ella (opcional) ---
-    // document.addEventListener('click', (event) => {
-    //     if (infoBubble.classList.contains('show') && !infoBubble.contains(event.target) && !event.target.closest('.skill-item')) {
-    //         infoBubble.classList.remove('show');
-    //     }
-    // });
+    document.addEventListener('click', (event) => {
+        if (infoBubble.classList.contains('show') && !infoBubble.contains(event.target) && !event.target.closest('.skill-item')) {
+            infoBubble.classList.remove('show');
+        }
+    });
 });
