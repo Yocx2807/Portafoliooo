@@ -9,9 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Funnel+Display:wght@300..800&family=Jomhuria&family=Kings&family=Mitr:wght@200;300;400;500;600;700&family=Montserrat&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
     <canvas id="manchas"></canvas>
     <div id="canvas-texto-3d"></div>
 
@@ -21,26 +24,73 @@
     <script src="https://unpkg.com/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
 
     <header>
-        <nav>
-            <a style="padding: 15px;" href="#sobre-mi"><b>Sobre mí</b></a>
-            <a style="padding: 15px;" href="#proyectos"><b>Proyectos</b></a>
-            <a style="padding: 15px;" href="#contacto"><b>Contacto</b></a>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
     <div id="container">
         <div id="sidebar">
-            <section id="sobre-mi">
+
+            <h1>
+                Ingeniera en Informática Empresarial
+            </h1>
+        </div>
+    </div>
+
+    <div class="rgb-divider"></div>
+
+    <section id="habilidades">
+        <h2>Mis Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-item" data-lang="csharp">
+                <img src="/img/logos/csharp-logo.png" alt="Logo C#">
+                <span class="skill-name">C#</span>
+            </div>
+            <div class="skill-item" data-lang="cpp">
+                <img src="/img/logos/cpp-logo.png" alt="Logo C++">
+                <span class="skill-name">C++</span>
+            </div>
+            <div class="skill-item" data-lang="dotnet">
+                <img src="/img/logos/dotnet-logo.png" alt="Logo .NET">
+                <span class="skill-name">.NET</span>
+            </div>
+            <div class="skill-item" data-lang="htmlcss">
+                <img src="/img/logos/htmlcss-logo.png" alt="Logo HTML & CSS">
+                <span class="skill-name">HTML & CSS</span>
+            </div>
+            <div class="skill-item" data-lang="javascript">
+                <img src="/img/logos/js-logo.png" alt="Logo JavaScript">
+                <span class="skill-name">JavaScript</span>
+            </div>
+            </div>
+
+        <div id="info-bubble" class="info-bubble">
+            <h3 id="bubble-title"></h3>
+            <p id="bubble-description"></p>
+            <button id="bubble-close">X</button>
+        </div>
+    </section>
+
+    <div class="rgb-divider"></div>
+
+    <section id="sobre-mi">
                 <h2>Sobre mí</h2>
                 <p>
                     Mi nombre es Yocxany Chaves Gonzalez y actualmente curso el último año de la carrera de Informática Empresarial
                     en la Universidad de Costa Rica. A lo largo de mi formación universitaria he adquirido una base sólida en tecnologías de la
                     información, así como una comprensión integral de los procesos empresariales.
-
+                </p>
+                <p>
                     Poseo conocimientos y experiencia en diversos lenguajes y herramientas, entre ellos: C#, C++, .NET, HTML, CSS, JavaScript,
                     así como bases de datos y redes. Me considero una persona con gran capacidad de aprendizaje autónomo, proactiva, con habilidades
                     para el trabajo en equipo y con una fuerte orientación hacia la mejora continua.
-
+                </p>
+                <p>
                     Mi objetivo profesional es seguir desarrollándome en el ámbito tecnológico, contribuyendo activamente en proyectos que representen
                     desafíos y oportunidades de crecimiento, tanto a nivel técnico como personal.
                 </p>
@@ -53,10 +103,9 @@
                     <li>Proyecto 2 - App con JavaScript</li>
                 </ul>
             </section>
-        </div>
-    </div>
 
     <script src="/js/manchas.js"></script>
     <script src="/js/letras.js"></script>
+    <script src="/js/skills.js"></script> </body>
 </body>
 </html>
