@@ -8,46 +8,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    
     <canvas id="manchas"></canvas>
+    <div id="canvas-texto-3d"></div>
 
-    <headera>
+    <script src="https://unpkg.com/three@0.124.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.124.0/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://unpkg.com/three@0.124.0/examples/js/geometries/TextGeometry.js"></script>
+    <script src="https://unpkg.com/three@0.124.0/examples/js/controls/OrbitControls.js"></script>
+
+    <header>
         <nav>
-            <a style="padding: 15px;" href="#sobre-mi"><b>Sobre mí</b></a> 
-            <a style="padding: 15px;" href="#proyectos"><b>Proyectos</b></a> 
+            <a style="padding: 15px;" href="#sobre-mi"><b>Sobre mí</b></a>
+            <a style="padding: 15px;" href="#proyectos"><b>Proyectos</b></a>
             <a style="padding: 15px;" href="#contacto"><b>Contacto</b></a>
         </nav>
-    </headera>
+    </header>
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>
-            Mi nombre es Yocxany Chaves Gonzalez y actualmente curso el último año de la carrera de Informática Empresarial 
-            en la Universidad de Costa Rica. A lo largo de mi formación universitaria he adquirido una base sólida en tecnologías de la 
-            información, así como una comprensión integral de los procesos empresariales.
+    <div id="container">
+        <div id="sidebar">
+            <section id="sobre-mi">
+                <h2>Sobre mí</h2>
+                <p>
+                    Mi nombre es Yocxany Chaves Gonzalez y actualmente curso el último año de la carrera de Informática Empresarial
+                    en la Universidad de Costa Rica. A lo largo de mi formación universitaria he adquirido una base sólida en tecnologías de la
+                    información, así como una comprensión integral de los procesos empresariales.
 
-            Poseo conocimientos y experiencia en diversos lenguajes y herramientas, entre ellos: C#, C++, .NET, HTML, CSS, JavaScript, 
-            así como bases de datos y redes. Me considero una persona con gran capacidad de aprendizaje autónomo, proactiva, con habilidades 
-            para el trabajo en equipo y con una fuerte orientación hacia la mejora continua.
+                    Poseo conocimientos y experiencia en diversos lenguajes y herramientas, entre ellos: C#, C++, .NET, HTML, CSS, JavaScript,
+                    así como bases de datos y redes. Me considero una persona con gran capacidad de aprendizaje autónomo, proactiva, con habilidades
+                    para el trabajo en equipo y con una fuerte orientación hacia la mejora continua.
 
-            Mi objetivo profesional es seguir desarrollándome en el ámbito tecnológico, contribuyendo activamente en proyectos que representen 
-            desafíos y oportunidades de crecimiento, tanto a nivel técnico como personal.
+                    Mi objetivo profesional es seguir desarrollándome en el ámbito tecnológico, contribuyendo activamente en proyectos que representen
+                    desafíos y oportunidades de crecimiento, tanto a nivel técnico como personal.
+                </p>
+            </section>
 
+            <section id="proyectos">
+                <h2>Proyectos</h2>
+                <ul>
+                    <li>Proyecto 1 - Página web de ejemplo</li>
+                    <li>Proyecto 2 - App con JavaScript</li>
+                </ul>
+            </section>
+        </div>
+    </div>
 
-        </p>
-    </section>
-
-    <section id="proyectos">
-        <h2>Proyectos</h2>
-        <ul>
-            <li>Proyecto 1 - Página web de ejemplo</li>
-            <li>Proyecto 2 - App con JavaScript</li>
-        </ul>
-    </section>    
-    
     <script src="/js/manchas.js"></script>
+    <script src="/js/letras.js"></script>
 </body>
 </html>
