@@ -58,12 +58,24 @@ header {
     padding: 8px 0; 
     transition: color 0.3s ease-in-out, transform 0.2s ease-out; 
     position: relative;
+    overflow: hidden; 
     display: inline-block;
 }
 
 .nav-link:hover {
     color: #f573ee;
     transform: translateY(-2px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%; 
+    width: 100%;
+    height: 3px; 
+    background-color: #f573ee; 
+    transition: left 0.3s ease-in-out; 
 }
 
 .nav-link:hover::before {
@@ -272,7 +284,7 @@ section {
 }
 
 .skill-item .skill-name {
-    color: #e0e0e0; 
+    color: #ffe6fb; 
     font-weight: 600;
     font-size: 1.1em;
     transition: color 0.3s ease-out;
@@ -302,7 +314,7 @@ section {
     border-radius: 10px;
     padding: 30px;
     max-width: 400px;
-    color: #e0e0e0;
+    color: #ffe6fb;
     box-shadow: 0 10px 30px rgba(247, 0, 255, 0.4); 
     z-index: 1000; 
     display: none; 
@@ -370,5 +382,262 @@ section {
     }
     .info-bubble p {
         font-size: 0.9em;
+    }
+}
+
+/* --- Sección "Sobre mí" (styles.css) --- */
+#sobre-mi {
+    padding: 80px 0; 
+    position: relative;
+    z-index: 3;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 40px;
+    gap: 80px;
+}
+
+.about-me-content {
+    flex: 1; 
+    max-width: 600px; 
+    text-align: left;
+}
+
+#sobre-mi h2 {
+    font-size: 3.5em;
+    color: #fa4fee;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(250, 79, 238, 0.5);
+    text-align: left;
+}
+
+#sobre-mi p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px; 
+    color: #ffe6fb; 
+}
+
+.highlight-text {
+    color: #66ccff;
+    font-weight: 700; 
+    text-shadow: 0 0 5px rgba(102, 204, 255, 0.4);
+}
+
+.call-to-action {
+    margin-top: 40px;
+}
+
+.call-to-action p {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffe6fb;
+}
+
+.btn-contact {
+    display: inline-block;
+    background: linear-gradient(45deg, #fa4fee, #66ccff); 
+    color: #ffe6fb;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(250, 79, 238, 0.5); 
+    background: linear-gradient(45deg, #66ccff, #fa4fee);
+}
+
+.about-me-visual {
+    flex-shrink: 0; 
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 3px solid #fa4fee;
+    box-shadow: 0 0 25px rgba(250, 79, 238, 0.5), inset 0 0 15px rgba(250, 79, 238, 0.5); 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-visual img.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.about-me-visual img.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .about-me-container {
+        flex-direction: column; 
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .about-me-content {
+        max-width: 100%; 
+        text-align: center;
+    }
+
+    #sobre-mi h2 {
+        font-size: 2.8em;
+        text-align: center;
+    }
+
+    .about-me-visual {
+        width: 250px;
+        height: 250px;
+    }
+
+    .call-to-action p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 600px) {
+    #sobre-mi {
+        padding: 60px 0;
+    }
+
+    #sobre-mi h2 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+
+    #sobre-mi p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .about-me-visual {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.hidden-fade {
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-scroll {
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+    will-change: opacity, transform;
+}
+
+.visible-scroll {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.social-bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(20, 20, 40, 0.98); 
+    border: 2px solid #fa4fee; 
+    border-radius: 15px;
+    padding: 30px;
+    display: flex; 
+    gap: 30px; 
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(250, 79, 238, 0.6);
+    z-index: 1100; 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.social-bubble.show {
+    opacity: 1;
+    pointer-events: auto; 
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.social-bubble a {
+    display: block; 
+    transition: transform 0.2s ease-out;
+}
+
+.social-bubble a:hover {
+    transform: scale(1.15); 
+}
+
+.social-bubble img {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); 
+}
+
+.social-bubble .social-bubble-close {
+    margin: -12px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: 2px solid #e3e66a; 
+    color: #e3e66a;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.social-bubble .social-bubble-close:hover {
+    background-color: #e3e66a;
+    color: #202030;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 600px) {
+    .social-bubble {
+        flex-wrap: wrap; 
+        gap: 15px;
+        padding: 20px;
+        width: 90%;
+    }
+    .social-bubble img {
+        width: 45px;
+        height: 45px;
+    }
+    .social-bubble .social-bubble-close {
+        width: 30px;
+        height: 30px;
+        font-size: 1em;
+        top: 10px;
+        right: 10px;
     }
 }

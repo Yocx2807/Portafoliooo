@@ -27,6 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'JavaScript',
             description: 'Amplia experiencia en desarrollo frontend interactivo con JavaScript, manipulación del DOM, y frameworks/librerías (como Three.js en este portafolio).'
         },
+        'cisco': {
+            title: 'Cisco',
+            description: 'Amplios conocimientos en redes y seguridad de infraestructura, incluyendo configuración de dispositivos Cisco, implementación de protocolos de enrutamiento, listas de control de acceso y conceptos de VLANs, VPNs y QoS.'
+        },
+        'bootstrap': {
+            title: 'Bootstrap',
+            description: 'Dominio en el diseño y desarrollo frontend responsivo utilizando Bootstrap. Habilidad para crear interfaces de usuario modernas, adaptables a cualquier dispositivo, y eficientes'
+        },
+        'SQL': {
+            title: 'SQL',
+            description: 'Experiencia sólida en la gestión y consulta de bases de datos relacionales con SQL. Capacidad para diseñar esquemas de bases de datos, manipular datos (CRUD), optimizar consultas complejas, y trabajar con diversos sistemas de gestión de bases de datos (DBMS) para el almacenamiento y recuperación eficiente de información.'
+        },
     };
 
     skillItems.forEach(item => {
