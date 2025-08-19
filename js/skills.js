@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const bubbleDescription = document.getElementById('bubble-description');
     const bubbleCloseBtn = document.getElementById('bubble-close');
 
-    // Datos de ejemplo para la burbuja (¡personaliza esto!)
     const skillData = {
         'csharp': {
             title: 'C# (C Sharp)',

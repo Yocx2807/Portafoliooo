@@ -13,10 +13,11 @@
 
 </head>
 
-<>
+<body>
 
     <canvas id="manchas"></canvas>
-    <div id="canvas-texto-3d"></div>
+    <div id="canvas-texto-3d"><span id="hover-message">Copiar Correo</span></div>
+    <div id="copy-message">¡Copiado!</div>
 
     <script src="https://unpkg.com/three@0.124.0/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.124.0/examples/js/loaders/FontLoader.js"></script>
@@ -27,7 +28,7 @@
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#projects-section" class="nav-link">Proyectos</a></li>
                 <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
@@ -102,7 +103,7 @@
                 </div>
                 <div class="values-statement">
                     <p>
-                        Me distingo por mi **capacidad de aprendizaje autónomo, proactividad y un fuerte compromiso con el trabajo en equipo.** Siempre busco la mejora continua y afronto cada proyecto como una oportunidad para crecer, tanto a nivel técnico como personal.
+                        Me distingo por mi capacidad de aprendizaje autónomo, proactividad y un fuerte compromiso con el trabajo en equipo. Siempre busco la mejora continua y afronto cada proyecto como una oportunidad para crecer, tanto a nivel técnico como personal.
                     </p>
                 </div>
                 <div class="call-to-action">
@@ -117,21 +118,39 @@
         </div>
     </section>
 
-            <section id="proyectos">
-                <h2>Proyectos</h2>
-                <ul>
-                    <li>Proyecto 1 - Página web de ejemplo</li>
-                    <li>Proyecto 2 - App con JavaScript</li>
-                </ul>
-            </section>
+    <div class="rgb-divider"></div>
+
+    <section id="projects-section">
+        <h2>Mis Proyectos</h2>
+        <div class="carousel-window">
+            <div class="projects-container">
+                <div class="project">
+                    <a href="https://gestiondecitasfront.onrender.com" target="_blank"><img src="/img/png/AnalisisDatos.png" alt="Imagen del Proyecto 1"></a>
+                    <h3>Proyecto de Gestión de Proyectos</h3>
+                    <p>Descripción breve del proyecto 2.</p>
+                </div>
+                <div class="project">
+                    <a href="URL_DE_TU_PROYECTO_AQUI.html" target="_blank"><img src="/img/png/BD.png" alt="Imagen del Proyecto 2"></a>
+                    <h3>Proyecto de Bases de Datos</h3>
+                    <p>Descripción breve del proyecto 2.</p>
+                </div>
+                <div class="project">
+                    <a href="URL_DE_TU_PROYECTO_AQUI.html" target="_blank"><img src="/img/png/Lenguajes.png" alt="Imagen del Proyecto 3"></a>
+                    <h3>Proyecto de Lenguajes</h3>
+                    <p>Descripción breve del proyecto 3.</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <div class="rgb-divider"></div>
 
     <script src="/js/manchas.js"></script>
     <script src="/js/letras.js"></script>
     <script src="/js/skills.js"></script>
     <script src="/js/skills.js"></script>
     <script src="/js/about-me.js"></script>
-
-    <div class="rgb-divider"></div>
+    <script src="/js/carrusel.js"></script>
     
 </body>
 </html>

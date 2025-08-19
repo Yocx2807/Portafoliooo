@@ -1,12 +1,14 @@
-// --- Variables globales para Three.js ---
 let scene, camera, renderer, textMesh, controls;
 
-// --- Variables para la interacción del ratón ---
 let isDragging = false;
 let previousMousePosition = {
     x: 0,
     y: 0
 };
+let isClick = true;
+
+const myEmail = 'yoc2811@gmail.com.com';
+const copyMessage = document.getElementById('copy-message');
 
 init();
 animate();
@@ -24,7 +26,6 @@ function init() {
     camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 1, 1000);
     camera.position.z = 180;
 
-    // --- Luces (tu código existente) ---
     const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     scene.add(ambientLight);
 
@@ -36,7 +37,6 @@ function init() {
     pointLight2.position.set(-50, -50, 100);
     scene.add(pointLight2);
 
-    // --- Fuente y texto (tu código existente) ---
     const loader = new THREE.FontLoader();
     loader.load('https://threejs.org/examples/fonts/gentilis_bold.typeface.json', function(font) {
         const geometry = new THREE.TextGeometry('Yocxany Ch', {
@@ -80,6 +80,7 @@ function init() {
     renderer.domElement.addEventListener('mousedown', onMouseDown);
     renderer.domElement.addEventListener('mouseup', onMouseUp);
     renderer.domElement.addEventListener('mousemove', onMouseMove);
+    renderer.domElement.addEventListener('click', onMouseClick);
     renderer.domElement.addEventListener('mouseout', onMouseUp);
 
     window.addEventListener('resize', onWindowResize);
@@ -109,21 +110,19 @@ function animate() {
 }
 
 function onMouseDown(event) {
+    isClick = true;
     if (event.button === 0) {
         const mouse = new THREE.Vector2();
         const rect = renderer.domElement.getBoundingClientRect();
         mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
         mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
-        // Crear un rayo desde la posición del ratón
         const raycaster = new THREE.Raycaster();
         raycaster.setFromCamera(mouse, camera);
 
-        // Interseccionar el rayo con el texto
         const intersects = raycaster.intersectObjects([textMesh]);
 
         if (intersects.length > 0) {
-            // Si el rayo interseca con el textMesh, estamos arrastrando el texto
             isDragging = true;
             previousMousePosition = {
                 x: event.clientX,
@@ -144,6 +143,8 @@ function onMouseUp(event) {
 function onMouseMove(event) {
     if (!isDragging || !textMesh) return;
 
+    isClick = false;
+    
     const deltaMove = {
         x: event.clientX - previousMousePosition.x,
         y: event.clientY - previousMousePosition.y
@@ -158,4 +159,33 @@ function onMouseMove(event) {
         x: event.clientX,
         y: event.clientY
     };
+}
+
+function onMouseClick(event) {
+    if (!isClick) return;
+
+    const mouse = new THREE.Vector2();
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    const raycaster = new THREE.Raycaster();
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObjects([textMesh]);
+
+    if (intersects.length > 0) {
+        navigator.clipboard.writeText(myEmail)
+            .then(() => {
+                if (copyMessage) {
+                    copyMessage.style.opacity = '1';
+                    setTimeout(() => {
+                        copyMessage.style.opacity = '0';
+                    }, 2000);
+                }
+            })
+            .catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+    }
 }
