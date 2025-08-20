@@ -7,7 +7,7 @@ let previousMousePosition = {
 };
 let isClick = true;
 
-const myEmail = 'yoc2811@gmail.com.com';
+const myEmail = 'yoc2811@gmail.com';
 const copyMessage = document.getElementById('copy-message');
 
 init();
