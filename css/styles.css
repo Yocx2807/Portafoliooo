@@ -899,3 +899,7 @@ h2 {
     font-size: 0.9rem;
     color: #ccc;
 }
+
+html, body {
+    overflow-x: hidden;
+}

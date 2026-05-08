@@ -55,22 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const socialBubble = document.createElement('div'); 
     socialBubble.className = 'social-bubble';
     socialBubble.innerHTML = `
-        <a href="https://linkedin.com/in/yocxanychaves" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/yocxany-chaves-gonzales-b3848025a" target="_blank" aria-label="LinkedIn">
             <img src="/img/logos/linkedin-icon-2.svg" alt="LinkedIn">
         </a>
-        <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/Yocx2807" target="_blank" aria-label="GitHub">
             <img src="/img/logos/github-icon-1.svg" alt="GitHub">
         </a>
-        <a href="https://github.com/tu-usuario" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/yocxany?locale=es_LA" target="_blank" aria-label="Facebook">
             <img src="/img/logos/facebook-3-2.svg" alt="GitHub">
         </a>
-        <a href="https://github.com/tu-usuario" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/yocxach/?hl=es" target="_blank" aria-label="Instagram">
             <img src="/img/logos/instagram-2016-5.svg" alt="GitHub">
         </a>
-        <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+        <a href="https://x.com/YocxanyC" target="_blank" aria-label="GitHub">
             <img src="/img/logos/x-2.svg" alt="Twiter(X)">
         </a>
-        <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+        <a href="https://discord.com/users/690732453962448906" target="_blank" aria-label="GitHub">
             <img src="/img/logos/discord-6.svg" alt="Discord">
         </a>
         <button class="social-bubble-close">X</button>
