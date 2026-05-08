@@ -61,15 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="https://github.com/Yocx2807" target="_blank" aria-label="GitHub">
             <img src="img/logos/github-icon-1.svg" alt="GitHub">
         </a>
-        <a href="https://www.facebook.com/yocxany?locale=es_LA" target="_blank" aria-label="Facebook">
-            <img src="img/logos/facebook-3-2.svg" alt="GitHub">
-        </a>
-        <a href="https://www.instagram.com/yocxach/?hl=es" target="_blank" aria-label="Instagram">
-            <img src="img/logos/instagram-2016-5.svg" alt="GitHub">
-        </a>
-        <a href="https://x.com/YocxanyC" target="_blank" aria-label="GitHub">
-            <img src="img/logos/x-2.svg" alt="Twiter(X)">
-        </a>
         <a href="https://discord.com/users/690732453962448906" target="_blank" aria-label="GitHub">
             <img src="img/logos/discord-6.svg" alt="Discord">
         </a>

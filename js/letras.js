@@ -39,9 +39,9 @@ function init() {
 
     const loader = new THREE.FontLoader();
     loader.load('https://threejs.org/examples/fonts/gentilis_bold.typeface.json', function(font) {
-        const geometry = new THREE.TextGeometry('Yocxany Ch', {
+        const geometry = new THREE.TextGeometry('yoc2811@gmail.com', {
             font: font,
-            size: 18,
+            size: 12,
             height: 5,
             curveSegments: 15,
             bevelEnabled: true,
